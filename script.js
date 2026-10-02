@@ -13,6 +13,7 @@ function initAll() {
   initCopyButtons();
   initContactForm();
   initCvDownloadTracker();
+  trackPageViews();
 }
 
 if (document.readyState === 'loading') {
@@ -394,13 +395,14 @@ function initContactForm() {
   const feedback = document.getElementById('form-feedback');
   if (!form || !feedback) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const name = form.elements['name'].value.trim();
     const email = form.elements['email'].value.trim();
     const subject = form.elements['subject'].value.trim();
     const message = form.elements['message'].value.trim();
+    const submitBtn = document.getElementById('form-submit-btn');
 
     if (!name || !email || !subject || !message) {
       feedback.className = 'form-feedback error';
@@ -416,22 +418,74 @@ function initContactForm() {
       return;
     }
 
-    // Construct mailto intent
-    const mailtoUrl = `mailto:einsteinjunir3002@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span>Sending...</span>';
+    }
 
-    feedback.className = 'form-feedback success';
-    feedback.innerHTML = `
-      ✓ Thank you, <strong>${escapeHtml(name)}</strong>! Your message is being directed to Samuel's email client.
-    `;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message })
+      });
 
-    showToast('Opening email client for dispatch...');
+      const data = await response.json();
 
-    setTimeout(() => {
-      window.location.href = mailtoUrl;
-    }, 600);
-
-    form.reset();
+      if (response.ok) {
+        feedback.className = 'form-feedback success';
+        feedback.innerHTML = `✓ Thank you, <strong>${escapeHtml(name)}</strong>! Your message has been sent successfully.`;
+        showToast('Message sent to backend API successfully.');
+        form.reset();
+      } else {
+        feedback.className = 'form-feedback error';
+        feedback.textContent = data.error || 'Failed to send message. Please try again later.';
+        showToast('Failed to send message.', 'error');
+      }
+    } catch (err) {
+      console.error('Error submitting form:', err);
+      // Fallback to mailto if API fails
+      const mailtoUrl = `mailto:einsteinjunir3002@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+      feedback.className = 'form-feedback error';
+      feedback.innerHTML = `⚠️ Backend failed. Falling back to email client...`;
+      showToast('Opening email client as fallback...');
+      setTimeout(() => {
+        window.location.href = mailtoUrl;
+      }, 1000);
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = `
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          <span>Send Message</span>
+        `;
+      }
+    }
   });
+}
+
+/* --------------------------------------------------------------------------
+   7.5. VIEW TRACKING
+   -------------------------------------------------------------------------- */
+async function trackPageViews() {
+  try {
+    const response = await fetch('/api/views', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' }
+    });
+    if (response.ok) {
+      const data = await response.json();
+      console.log('Total Views:', data.views);
+      // Optional: Display it in UI if an element exists
+      const viewCounter = document.getElementById('view-counter');
+      if (viewCounter) viewCounter.textContent = data.views;
+    }
+  } catch (err) {
+    console.error('View tracking failed', err);
+  }
 }
 
 /* --------------------------------------------------------------------------
