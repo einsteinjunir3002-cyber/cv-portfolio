@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Samuel Bekoe - Curriculum Vitae</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 14mm 15mm 14mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: #1a202c;
+      background: #ffffff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .header {
+      border-bottom: 2px solid #2b6cb0;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+    }
+    .header h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #1a365d;
+      letter-spacing: -0.3px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+    }
+    .header .subtitle {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #2b6cb0;
+      margin-bottom: 7px;
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      font-size: 8.5pt;
+      color: #4a5568;
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .contact-item a {
+      color: #2b6cb0;
+      text-decoration: none;
+    }
+    .section {
+      margin-bottom: 13px;
+    }
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a365d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1.2px solid #cbd5e0;
+      padding-bottom: 2px;
+      margin-bottom: 7px;
+    }
+    p {
+      color: #2d3748;
+      margin-bottom: 5px;
+      text-align: justify;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px 16px;
+      font-size: 9pt;
+    }
+    .skill-category {
+      background: #f7fafc;
+      border-left: 3px solid #3182ce;
+      padding: 5px 8px;
+      border-radius: 0 4px 4px 0;
+    }
+    .skill-cat-title {
+      font-weight: 700;
+      color: #2c5282;
+      font-size: 9pt;
+      margin-bottom: 2px;
+    }
+    .skill-list {
+      color: #4a5568;
+      font-size: 8.5pt;
+      line-height: 1.35;
+    }
+    .item {
+      margin-bottom: 9px;
+      page-break-inside: avoid;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .item-title {
+      font-size: 10pt;
+      font-weight: 700;
+      color: #2d3748;
+    }
+    .item-org {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #3182ce;
+    }
+    .item-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #718096;
+      white-space: nowrap;
+    }
+    .item-desc {
+      font-size: 9pt;
+      color: #4a5568;
+      margin-top: 2px;
+    }
+    ul.item-bullets {
+      margin-left: 16px;
+      margin-top: 3px;
+      font-size: 8.8pt;
+      color: #4a5568;
+    }
+    ul.item-bullets li {
+      margin-bottom: 2px;
+      line-height: 1.35;
+    }
+    .project-tech {
+      font-size: 8pt;
+      color: #4c51bf;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 7.5pt;
+      font-weight: 600;
+      padding: 1px 5px;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border-radius: 3px;
+      border: 1px solid #bee3f8;
+      margin-left: 6px;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .highlight {
+      font-weight: 600;
+      color: #2d3748;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>SAMUEL BEKOE</h1>
+    <div class="subtitle">Computer Science Graduate | Technology & Digital Solutions</div>
+    <div class="contact-bar">
+      <div class="contact-item"><strong>Location:</strong> Adentan, Greater Accra, Ghana</div>
+      <div class="contact-item"><strong>Phone:</strong> <a href="tel:+233595412232">0595412232</a></div>
+      <div class="contact-item"><strong>Email:</strong> <a href="mailto:einsteinjunir3002@gmail.com">einsteinjunir3002@gmail.com</a></div>
+      <div class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/einsteinjunir3002-cyber">github.com/einsteinjunir3002-cyber</a></div>
+    </div>
+  </header>
+
+  <!-- PROFESSIONAL SUMMARY -->
+  <section class="section">
+    <div class="section-title">Professional Summary</div>
+    <p style="font-size: 9pt;">
+      Motivated and practically grounded Computer Science graduate from the University of Cape Coast (UCC, Class of 2026) with comprehensive skills in computer troubleshooting, hardware & software management, digital research, web development, and AI-assisted engineering (prompt engineering & rapid prototyping). Adept at diagnosing technical issues, managing operating systems, researching solutions, and building database-driven web platforms. Combines foundational computer science knowledge with strong hands-on problem-solving abilities and a fast, self-directed learning approach. Prepared to add immediate value in National Service Scheme (NSS) placements, IT support, digital operations, and technology development teams.
+    </p>
+  </section>
+
+  <!-- CORE SKILLS -->
+  <section class="section">
+    <div class="section-title">Core Skills & Competencies</div>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-cat-title">Computer Support & IT Management</div>
+        <div class="skill-list">Computer Troubleshooting, Hardware Diagnostics, Operating System Setup (Windows/Linux), Software Installation & Maintenance, Peripheral Configuration, Network Setup Basics.</div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">AI-Assisted Development & Engineering</div>
+        <div class="skill-list">Prompt Engineering, AI-Assisted Code Generation, Vibe Coding, AI-Driven Debugging & Component Refactoring, Rapid Prototyping, Technical Solution Research.</div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Web & Application Development</div>
+        <div class="skill-list">HTML5, CSS3, JavaScript (ES6+), React, Next.js, Node.js, Express, SQLite, PostgreSQL (Prisma ORM), REST API Integration, Responsive Design.</div>
+      </div>
+      <div class="skill-category">
+        <div class="skill-cat-title">Productivity & Professional Strengths</div>
+        <div class="skill-list">Fast & Accurate Typing, Technical Documentation, Independent Learning, Git & GitHub Version Control, Adaptability, Detail-Oriented Execution.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL PROJECTS -->
+  <section class="section">
+    <div class="section-title">Featured Technical Projects</div>
+
+    <!-- Project 1 -->
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">SmartLearn — AI-Powered Collaborative Learning Platform</span>
+          <span class="badge">UCC Final-Year Capstone Project</span>
+        </div>
+        <span class="item-date">2025 – 2026</span>
+      </div>
+      <div class="project-tech">Tech Stack: React, Vite, Node.js, Express, SQLite (better-sqlite3), JWT, Context API, Vanilla CSS</div>
+      <ul class="item-bullets">
+        <li>Co-engineered a full-stack learning management platform designed to elevate university student collaboration and independent study efficiency.</li>
+        <li>Integrated an interactive <strong>AI Study Assistant</strong> capable of answering curriculum questions in context and providing immediate academic assistance.</li>
+        <li>Developed features including collaborative peer study workspaces, subject-based digital resource library, topic-based quizzes with automated feedback, and direct in-app messaging.</li>
+        <li>Structured backend services with JWT authentication, custom business logic layers, and pre-seeded SQLite relational database schema.</li>
+        <li>Repository: <em>github.com/einsteinjunir3002-cyber/L400-PROJECT-SUBMISSION</em></li>
+      </ul>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">LIKEM Perfumes — Ghanaian Social-Commerce & E-Commerce Platform</span>
+          <span class="badge">Client Web Solution</span>
+        </div>
+        <span class="item-date">2026</span>
+      </div>
+      <div class="project-tech">Tech Stack: Next.js (App Router), TypeScript, Prisma ORM, PostgreSQL, Paystack Ghana, WhatsApp API</div>
+      <ul class="item-bullets">
+        <li>Architected and launched a production-grade e-commerce web platform for an independent Ghanaian fragrance vendor to expand social media sales.</li>
+        <li>Implemented a dual-channel ordering system: instant 1-click WhatsApp order dispatch with pre-filled cart details and server-verified Paystack checkout (supporting MTN MoMo, Telecel Cash, and Cards).</li>
+        <li>Engineered regional shipping calculations across Ghana and built an administrative portal with inventory tracking and WhatsApp sale recording.</li>
+        <li>Repository: <em>github.com/einsteinjunir3002-cyber/Likem-Store</em></li>
+      </ul>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">Bekoe Rental Property Website & Tenancy Management System</span>
+          <span class="badge">Enterprise Web Solution</span>
+        </div>
+        <span class="item-date">2026</span>
+      </div>
+      <div class="project-tech">Tech Stack: Next.js 14+ (App Router), TypeScript, Prisma ORM, Tailwind CSS, Lucide Icons, SQLite/PostgreSQL</div>
+      <ul class="item-bullets">
+        <li>Designed and developed a database-driven property website for a residential rental business in Adenta New Site, Greater Accra.</li>
+        <li>Built an intuitive public portal allowing prospective tenants to browse verified room vacancies, filter by rental terms, and schedule physical viewings.</li>
+        <li>Integrated direct WhatsApp enquiry messaging and created a role-based administrative dashboard for room status management, publishing controls, and tenancy records.</li>
+      </ul>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="item">
+      <div class="item-header">
+        <div>
+          <span class="item-title">ARSPCS — Autonomous Robotic Solar Panel Cleaning Simulation</span>
+          <span class="badge">Systems Engineering</span>
+        </div>
+        <span class="item-date">2026</span>
+      </div>
+      <div class="project-tech">Tech Stack: Python 3, State Machine Architecture, Matplotlib, Physics Simulation Models, Automated Testing</div>
+      <ul class="item-bullets">
+        <li>Engineered a telemetry and state-machine simulation for autonomous solar panel cleaning robots operating in tropical dusty conditions.</li>
+        <li>Simulated battery degradation, environmental soiling index, operational state transitions, and generated client executive performance reports.</li>
+        <li>Repository: <em>github.com/einsteinjunir3002-cyber/joy-solar-robot-simulator</em></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="section">
+    <div class="section-title">Education & Academic Background</div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">University of Cape Coast (UCC)</span>
+        <span class="item-date">2022 – 2026</span>
+      </div>
+      <div class="item-org">Bachelor of Science (BSc) in Computer Science</div>
+      <div class="item-desc">Completed 4-year accredited degree. Key modules: Data Structures & Algorithms, Database Systems, Software Engineering, Computer Networks, Operating Systems, Web Technologies. Final Year Project: AI-Integrated LMS (SmartLearn).</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Pentecost University</span>
+        <span class="item-date">Accra, Ghana</span>
+      </div>
+      <div class="item-org">Business Information Technology — NCC Programme</div>
+      <div class="item-desc">Coursework in business information systems, computer fundamentals, and digital business applications.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Valley View University</span>
+        <span class="item-date">Accra, Ghana</span>
+      </div>
+      <div class="item-org">Diploma in Computer Science Studies</div>
+      <div class="item-desc">Foundational training in programming concepts, computer architecture, and computational problem solving.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Ideal College</span>
+        <span class="item-date">Accra, Ghana</span>
+      </div>
+      <div class="item-org">WASSCE Preparation & Academic Advancement</div>
+      <div class="item-desc">Focused preparation to strengthen academic standing, leading to successful admission into the BSc Computer Science programme at UCC.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">West Africa Senior High School (WASHS)</span>
+        <span class="item-date">2017 – 2020</span>
+      </div>
+      <div class="item-org">West African Senior School Certificate Examination (WASSCE)</div>
+      <div class="item-desc">Completed senior high school education in Adentan, Greater Accra. Completed WASSCE in 2020.</div>
+    </div>
+
+    <div class="item">
+      <div class="item-header">
+        <span class="item-title">Dieudonné International School</span>
+        <span class="item-date">Completed 2017</span>
+      </div>
+      <div class="item-org">Basic Education Certificate Examination (BECE)</div>
+    </div>
+  </section>
+
+  <!-- PERSONAL PARTICULARS -->
+  <section class="section" style="margin-bottom: 0;">
+    <div class="section-title">Personal Particulars & Availability</div>
+    <div style="font-size: 8.8pt; color: #4a5568; line-height: 1.4;">
+      <strong>Nationality:</strong> Ghanaian &bull; 
+      <strong>Current Location:</strong> Adentan, Greater Accra, Ghana &bull; 
+      <strong>Languages:</strong> English (Fluent), Twi, Ewe &bull; 
+      <strong>Availability:</strong> National Service Scheme (NSS), IT Support, Junior Tech & Web Roles.
+    </div>
+  </section>
+
+</body>
+</html>
