@@ -338,7 +338,7 @@ function initProjectModal() {
         <p style="font-size: 0.88rem; color: #94a3b8; margin-top: 4px; line-height: 1.5;">${data.contribution}</p>
       </div>
 
-      <div style="display: flex; gap: 12px; align-items: center; justify-content: flex-end; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1);">
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: flex-end; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1);">
         ${vercelBtnHtml}
         ${repoBtnHtml}
       </div>
