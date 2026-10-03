@@ -179,7 +179,8 @@ const PROJECT_DATA = {
       '🔐 <strong>Secure Authentication:</strong> JWT token authentication and role-based access control.'
     ],
     tech: ['React', 'Vite', 'Node.js', 'Express', 'SQLite (better-sqlite3)', 'JWT', 'Context API', 'Vanilla CSS'],
-    contribution: 'Researched backend and API endpoints, co-built the React frontend, structured the pre-seeded SQLite database schema, and integrated the AI assistant service endpoint.'
+    contribution: 'Researched backend and API endpoints, co-built the React frontend, structured the pre-seeded SQLite database schema, and integrated the AI assistant service endpoint.',
+    vercel: 'https://smartlearn-ai-project.vercel.app'
   },
   likem: {
     title: 'LIKEM Perfumes — Ghanaian Social-Commerce & E-Commerce Platform',
@@ -197,7 +198,8 @@ const PROJECT_DATA = {
       '📸 <strong>Media Management:</strong> High-res photo catalog with dimension validation and SHA256 image deduplication.'
     ],
     tech: ['Next.js (App Router)', 'TypeScript', 'Prisma ORM', 'PostgreSQL', 'Paystack Ghana API', 'WhatsApp Click-to-Chat'],
-    contribution: 'Solely built the full-stack application, integrated the Paystack Ghana webhook architecture, modeled the Prisma relational database, and deployed the storefront.'
+    contribution: 'Solely built the full-stack application, integrated the Paystack Ghana webhook architecture, modeled the Prisma relational database, and deployed the storefront.',
+    vercel: 'https://likem-store.vercel.app'
   },
   rent: {
     title: 'Bekoe Rental Property Website & Tenancy Management System',
@@ -215,7 +217,8 @@ const PROJECT_DATA = {
       '🛡️ <strong>Owner Admin Portal:</strong> Room CRUD, public publishing toggles, tenant agreements repository, and CMS content blocks.'
     ],
     tech: ['Next.js 14+ (App Router)', 'TypeScript', 'Prisma ORM', 'Tailwind CSS', 'Lucide Icons', 'SQLite / PostgreSQL'],
-    contribution: 'Designed and engineered the complete solution from concept to production, providing direct value to a real family business in Adentan.'
+    contribution: 'Designed and engineered the complete solution from concept to production, providing direct value to a real family business in Adentan.',
+    vercel: 'https://rent.vercel.app'
   },
   solar: {
     title: 'ARSPCS — Autonomous Robotic Solar Panel Cleaning Simulation',
@@ -233,7 +236,8 @@ const PROJECT_DATA = {
       '🧪 <strong>Automated Test Suite:</strong> Comprehensive unit testing for state transitions and battery edge cases.'
     ],
     tech: ['Python 3', 'State Machine Architecture', 'Matplotlib', 'Physics Simulation', 'Automated Unit Tests'],
-    contribution: 'Engineered the simulation core, telemetry logging pipeline, state machine transitions, and client technical reporting format.'
+    contribution: 'Engineered the simulation core, telemetry logging pipeline, state machine transitions, and client technical reporting format.',
+    vercel: 'https://solar-robot-live-web.vercel.app'
   },
   harmony: {
     title: 'Harmony Haven Enterprise — Multi-Brand E-Commerce Platform',
@@ -251,7 +255,8 @@ const PROJECT_DATA = {
       '📈 <strong>Executive Management Center:</strong> Multi-brand catalog, inventory controls, and order tracking.'
     ],
     tech: ['Next.js App Router', 'TypeScript', 'Prisma ORM', 'Paystack API', 'WhatsApp Dispatch', 'Tailwind CSS'],
-    contribution: 'Architected the multi-brand database schema, developed storefront interfaces, and implemented payment and order confirmation pipelines.'
+    contribution: 'Architected the multi-brand database schema, developed storefront interfaces, and implemented payment and order confirmation pipelines.',
+    vercel: 'https://harmony-haven-enterprise.vercel.app'
   }
 };
 
@@ -288,6 +293,20 @@ function initProjectModal() {
     const techTags = data.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
     const featuresList = data.features.map(f => `<li style="margin-bottom: 6px; font-size: 0.9rem; color: #cbd5e1;">${f}</li>`).join('');
 
+    let vercelBtnHtml = '';
+    if (data.vercel) {
+      vercelBtnHtml = `
+        <a href="${data.vercel}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="background: linear-gradient(135deg, #10b981, #059669); border-color: #059669;">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span>Live Demo</span>
+        </a>
+      `;
+    }
+
     modalContent.innerHTML = `
       <div style="margin-bottom: 16px;">
         <span class="glass-pill" style="font-size: 0.75rem; color: var(--accent-cyan-light); margin-bottom: 8px;">${data.badge}</span>
@@ -320,6 +339,7 @@ function initProjectModal() {
       </div>
 
       <div style="display: flex; gap: 12px; align-items: center; justify-content: flex-end; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.1);">
+        ${vercelBtnHtml}
         ${repoBtnHtml}
       </div>
     `;
